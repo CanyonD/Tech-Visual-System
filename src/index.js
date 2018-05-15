@@ -18,7 +18,9 @@ passport.use(new Strategy(jwt, function(jwt_payload, done) {
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
-    <Routes />,
+    <div className="App container">
+        <Routes />
+    </div>,
     document.getElementById('root')
 );
 registerServiceWorker();

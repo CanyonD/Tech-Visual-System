@@ -1,5 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { 
+    BrowserRouter as Router,
+    Route, 
+    Link, 
+    // NavLink,
+    Switch
+} from 'react-router-dom'
+import { 
+    Nav, 
+    Navbar, 
+    NavItem 
+} from "react-bootstrap"
 
 import App from './App';
 import Home from './view/Home';
@@ -7,58 +18,26 @@ import NotFound from './view/NotFound';
 
 const Routes = (props) => (
     <Router {...props}>
-        <Root>
-            <Sidebar>
-                <SidebarItem key={'home'}>
-                    <Link to={`home`}>
-                        Home
-                    </Link>
-                    <Link to={`sdfsdfsdf`}>
-                        wrong
-                    </Link>
-                </SidebarItem>
-            </Sidebar>
-            <Main>
+        <Navbar fluid collapseOnSelect>
+            <Navbar.Header>
+                <Navbar.Brand>
+                    <Link to="/">Tech Visual System</Link>
+                </Navbar.Brand>
+                <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+                <Nav pullRight>
+                    <NavItem href="/home">Home</NavItem>
+                    <NavItem href="/sdfsdfsdf">Wrong</NavItem>
+                </Nav>
+            </Navbar.Collapse>
+            <Switch>
                 <Route exact={true} path="/" component={App} />
                 <Route path="/home" component={Home} />
                 <Route path="*" component={NotFound} />
-            </Main>
-        </Root>
+            </Switch>
+        </Navbar>
     </Router>
 );
-
-const Root = (props) => (
-    <div style={{
-        display: 'flex'
-    }} {...props}/>
-)
-
-const Sidebar = (props) => (
-    <div style={{
-        width: '10vw',
-        height: '100vh',
-        overflow: 'auto',
-        background: 'lightgrey'
-    }} {...props}/>
-)
-
-const SidebarItem = (props) => (
-    <div style={{
-        whiteSpace: 'nowrap',
-        textOverflow: 'ellipsis',
-        overflow: 'hidden',
-        padding: '5px 10px'
-    }} {...props}/>
-)
-
-const Main = (props) => (
-    <div style={{
-        flex: 1,
-        height: '100vh',
-        overflow: 'auto'
-    }}>
-        <div style={{ padding: '20px'}} {...props} />
-    </div>
-)
 
 export default Routes;
