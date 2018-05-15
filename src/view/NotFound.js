@@ -10,4 +10,4 @@ class NotFound extends Component {
   }
 }
 
-export default App;
+export default NotFound;

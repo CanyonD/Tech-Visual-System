@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { browserHistory } from 'react-router';
-
 import Routes from './routes';
 
 const passport = require('passport');
@@ -14,13 +12,13 @@ const { Strategy } = require('passport-jwt');
 const { jwt } = require('./config');
 
 passport.use(new Strategy(jwt, function(jwt_payload, done) {
-    if(jwt_payload != void(0)) return done(false, jwt_payload);
+    if(jwt_payload !== void(0)) return done(false, jwt_payload);
     done();
 }));
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
-    <Routes history={browserHistory}/>,
+    <Routes />,
     document.getElementById('root')
 );
 registerServiceWorker();

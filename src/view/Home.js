@@ -4,9 +4,9 @@ import './css/App.css';
 class Home extends Component {
   render() {
     return (
-      <div className="Home">
-        <header className="Home-header">
-          <h1 className="Home-title">Home</h1>
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Home</h1>
         </header>
       </div>
     );
