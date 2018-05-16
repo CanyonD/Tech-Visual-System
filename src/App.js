@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import logo from './view/image/logo.svg';
-import './view/css/App.css';
+import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import WorkSpace from './containers/WorkSpace';
+
+const Home = () =>
+  <div>
+    <Link to="/sampleHotelName/dashboard">Sample dashboard</Link>
+    <hr />
+    Home
+  </div>;
+
+const App = () =>
+  <Switch>
+    <Route exact path="/" component={Home} />
+    <Route path="/account" component={() => <div>Account</div>} />
+    <Route path="/profile" component={() => <div>Profile</div>} />
+    <Route path="/help" component={() => <div>Help</div>} />
+    <Route path="/:hotelName" component={WorkSpace} />
+  </Switch>;
 
 export default App;
