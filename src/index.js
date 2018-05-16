@@ -20,7 +20,6 @@ passport.use(new Strategy(jwt, function(jwt_payload, done) {
     done();
 }));
 
-// ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Layout from '../components/Layouts/Dashboard';
 import { NotFound } from '../containers';
-import { Table } from '../components/Layouts/Table'
+import Table from '../components/Layouts/Table/Table'
 
 class Dashboard extends React.Component {
   render() {
