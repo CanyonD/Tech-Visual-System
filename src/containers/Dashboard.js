@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Layout from '../components/Layouts/Dashboard';
-import NotFound from './NotFound';
+import { NotFound } from '../containers';
+import { Table } from '../components/Layouts/Table'
 
 class Dashboard extends React.Component {
   render() {
@@ -17,7 +18,7 @@ class Dashboard extends React.Component {
           />
           <Route 
             path="/system/table" 
-            component={() => <div>Table</div>} 
+            component={Table} 
           />
           <Route path="*" component={NotFound} />
         </Switch>
@@ -36,4 +37,4 @@ function mapStateToProps(state) {
 }
 
 const connectedDashboard = connect(mapStateToProps)(Dashboard);
-export default connectedDashboard;
+export { connectedDashboard as Dashboard };

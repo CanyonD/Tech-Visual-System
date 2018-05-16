@@ -2,12 +2,8 @@ import React from 'react';
 import { Switch, Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Dashboard from './containers/Dashboard';
-import Help from './containers/Help';
-import NotFound from './containers/NotFound';
-import PrivateRoute from './components/PrivateRoute'
-import LoginPage from './containers/LoginPage';
-
+import PrivateRoute from './components/Routes/PrivateRoute'
+import { Dashboard, Help, NotFound, LoginPage } from './containers';
 import { history } from './components/Helpers';
 
 const Profile = () =>

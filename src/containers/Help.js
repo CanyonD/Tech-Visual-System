@@ -3,9 +3,9 @@ import React from 'react';
 
 // import Layout from '../components/Layouts/Dashboard';
 
-const Help = ({ match }) =>
+const Help = () =>
   <div>
     Help for system
   </div>;
 
-export default Help;
+export { Help };
