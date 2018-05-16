@@ -2,8 +2,8 @@ import React from 'react';
 
 import Header from "./Header";
 
-const WorkSpaceLayout = ({ match, children: Content }) => (
-  <div className="WorkSpace">
+const DashboardLayout = ({ match, children: Content }) => (
+  <div className="Dashboard">
     <Header match={match} />
     <section className="container-fluid">
       {Content}
@@ -11,4 +11,4 @@ const WorkSpaceLayout = ({ match, children: Content }) => (
   </div>
 );
 
-export default WorkSpaceLayout;
+export default DashboardLayout;

@@ -1,22 +1,27 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-import WorkSpace from './containers/WorkSpace';
+import Dashboard from './containers/Dashboard';
+import Help from './containers/Help';
+import NotFound from './view/NotFound';
 
-const Home = () =>
+const Account = () =>
   <div>
-    <Link to="/sampleHotelName/dashboard">Sample dashboard</Link>
-    <hr />
-    Home
+    Account
+  </div>;
+const Profile = () =>
+  <div>
+    Profile
   </div>;
 
 const App = () =>
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/account" component={() => <div>Account</div>} />
-    <Route path="/profile" component={() => <div>Profile</div>} />
-    <Route path="/help" component={() => <div>Help</div>} />
-    <Route path="/:hotelName" component={WorkSpace} />
+    <Route exact path="/" component={() => <div>NULL</div>} />
+    <Route path="/account" component={Account} />
+    <Route path="/profile" component={Profile} />
+    <Route path="/help" component={Help} />
+    <Route path="/system" component={Dashboard} />
+    <Route path="*" component={NotFound} />
   </Switch>;
 
 export default App;

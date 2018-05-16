@@ -1,7 +1,10 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap'
+import { 
+  LinkContainer, 
+  // IndexLinkContainer 
+} from 'react-router-bootstrap'
 
 const NavLink = ({ exact, to, eventKey, children }) =>
   <LinkContainer exact={exact} to={to} eventKey={eventKey}>
@@ -17,29 +20,33 @@ const NavBar = ({ match }) =>
   <Navbar fluid collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/">MyHotel</Link>
+        <Link to="/system">Tech Visual System</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav>
-        <NavLink to={`${match.url}/dashboard`} eventKey={1}>
-          Dashboard
+        <NavLink 
+          to={`${match.url}/image`} 
+          eventKey={1}
+        >
+          Image
         </NavLink>
-        <NavLink to={`${match.url}/pricing`} eventKey={2}>
-          Pricing
+        <NavLink 
+          to={`${match.url}/table`} 
+          eventKey={2}
+        >
+          Table
         </NavLink>
       </Nav>
       <Nav pullRight>
         <NavLink exact to={match.url} eventKey={3}>
-
-            My sample hotel
-
+            Dashboard
         </NavLink>
         <NavDropdown eventKey={3} title="John Smith" id="basic-nav-dropdown">
-          <MenuLink to="/profile" eventKey={3.1}>
+          {/* <MenuLink to="/profile" eventKey={3.1}>
             Profile
-          </MenuLink>
+          </MenuLink> */}
           <MenuLink to="/help" eventKey={3.2}>
             Help
           </MenuLink>

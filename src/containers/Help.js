@@ -1,0 +1,11 @@
+import React from 'react';
+// import { Route, Switch } from 'react-router-dom';
+
+// import Layout from '../components/Layouts/Dashboard';
+
+const Help = ({ match }) =>
+  <div>
+    Help for system
+  </div>;
+
+export default Help;
