@@ -1,27 +1,47 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Dashboard from './containers/Dashboard';
 import Help from './containers/Help';
-import NotFound from './view/NotFound';
+import NotFound from './containers/NotFound';
+import PrivateRoute from './components/PrivateRoute'
+import LoginPage from './containers/LoginPage';
 
-const Account = () =>
-  <div>
-    Account
-  </div>;
+import { history } from './components/Helpers';
+
 const Profile = () =>
   <div>
     Profile
   </div>;
 
-const App = () =>
-  <Switch>
-    <Route exact path="/" component={() => <div>NULL</div>} />
-    <Route path="/account" component={Account} />
-    <Route path="/profile" component={Profile} />
-    <Route path="/help" component={Help} />
-    <Route path="/system" component={Dashboard} />
-    <Route path="*" component={NotFound} />
-  </Switch>;
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Router history={history}>
+          <div>
+            <Switch>
+              <Route exact path="/" component={LoginPage} history={history}/>
+              <PrivateRoute path="/profile" component={Profile} />
+              <PrivateRoute path="/help" component={Help} />
+              <PrivateRoute path="/system" component={Dashboard} />
+              <Route path="/login" component={LoginPage} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    )
+  }
+}
 
-export default App;
+function mapStateToProps(state) {
+  const { alert } = state;
+  return {
+      alert
+  };
+}
+
+const connectedApp = connect(mapStateToProps)(App);
+export default connectedApp;

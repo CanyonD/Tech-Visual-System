@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './view/css/index.css';
-import App from './App';
 import { BrowserRouter } from "react-router-dom";
-import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
 
-// import Routes from './routes';
+import registerServiceWorker from './registerServiceWorker';
+import App from './App';
+import { store } from './components/Helpers';
+
+import { configureFakeBackend } from './components/Helpers';
+configureFakeBackend();
 
 const passport = require('passport');
 const { Strategy } = require('passport-jwt');
@@ -19,9 +22,11 @@ passport.use(new Strategy(jwt, function(jwt_payload, done) {
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>,
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('root')
 );
 registerServiceWorker();
