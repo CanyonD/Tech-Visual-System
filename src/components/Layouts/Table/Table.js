@@ -9,11 +9,14 @@ class Table extends Component {
     super();
 
     // an example array of items to be paged
-    var exampleItems = [...Array(1500).keys()].map(i => (
+    var exampleItems = [...Array(100).keys()].map(i => (
         { 
-            id: (i+1), 
+            id: (i+1),
+            serial_device: 'P004.2.4',
+            port: (1),
+            description: ('Устройство P004 Адрес 2.4 Порт 1'), 
             name: 'Item ' + (i+1),
-            value: (i+1)
+            value: (Math.floor(Math.random() * 100) + 1)
         }
     ));
 
@@ -52,8 +55,10 @@ class Table extends Component {
                         options={ this.options }
                     >
                         <TableHeaderColumn isKey dataField='id' dataSort={ true }>ID</TableHeaderColumn>
-                        <TableHeaderColumn dataField='name' dataSort={ true }>Name</TableHeaderColumn>
+                        <TableHeaderColumn dataField='serial_device' dataSort={ true }>Serial Device</TableHeaderColumn>
+                        <TableHeaderColumn dataField='port' dataSort={ true }>Port</TableHeaderColumn>
                         <TableHeaderColumn dataField='value' dataSort={ true }>Value</TableHeaderColumn>
+                        <TableHeaderColumn dataField='description' dataSort={ true }>Description</TableHeaderColumn>
                     </BootstrapTable>
                     {/* <Pagination 
                         items={this.state.exampleItems} 
