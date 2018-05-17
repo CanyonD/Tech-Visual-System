@@ -5,9 +5,9 @@ import Header from "./Header";
 const DashboardLayout = ({ match, children: Content }) => (
   <div className="Dashboard">
     <Header match={match} />
-    <section className="container-fluid">
+    {/* <section className="container-fluid"> */}
       {Content}
-    </section>
+    {/* </section> */}
   </div>
 );
 

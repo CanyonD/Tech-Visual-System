@@ -11,7 +11,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="WorkSpace__header">
+      <header className="System_header">
         <NavBar match={this.props.match} />
       </header>
     )

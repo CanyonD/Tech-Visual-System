@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Layout from '../components/Layouts/Dashboard';
 import { NotFound } from '../containers';
 import Table from '../components/Layouts/Table/Table'
+import Scheme from '../components/Layouts/Scheme/Scheme'
 
 class Dashboard extends React.Component {
   render() {
@@ -13,8 +14,8 @@ class Dashboard extends React.Component {
         <Switch>
           <Route exact path="/system" component={() => <div>Overview</div>} />
           <Route
-            path='/system/image'
-            component={() => <div>Image</div>}
+            path='/system/scheme'
+            component={Scheme}
           />
           <Route 
             path="/system/table" 

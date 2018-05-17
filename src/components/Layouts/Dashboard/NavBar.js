@@ -35,10 +35,10 @@ class NavBar extends React.Component {
         <Navbar.Collapse>
           <Nav>
             <NavLink 
-              to={`${this.props.match.url}/image`} 
+              to={`${this.props.match.url}/scheme`} 
               eventKey={1}
             >
-              Image
+              Scheme
             </NavLink>
             <NavLink 
               to={`${this.props.match.url}/table`} 
