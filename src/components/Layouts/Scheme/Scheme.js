@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Main.css'
+import '../../../view/css/Scheme_1.css'
 import Background from '../../../view/image/Scheme_1.png'
 
 function format_id(item){
@@ -29,10 +30,13 @@ class Scheme extends Component {
 
   render() {
     return (
-        <div id="body" style={ { backgroundImage: `url(${Background})` } }>
+        <div 
+            id="body" 
+            style={ { backgroundImage: `url(${Background})` } }
+        >
             {this.state.exampleItems.map(item =>
                 <div key={item.id} id={format_id(item)}>
-                    {item.value}
+                    <div>{item.value}</div>
                 </div>
             )}
         </div>
