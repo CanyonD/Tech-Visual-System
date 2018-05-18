@@ -8,4 +8,29 @@
 }
 #body div {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-element {
+    border-radius: 50%;
+}
+.h1-font {
+    font-size: 36px;
+}
+.h2-font {
+    font-size: 30px;
+}
+.h3-font {
+    font-size: 24px;
+}
+.h4-font {
+    font-size: 18px;
+}
+.h5-font {
+    font-size: 14px;
+}
+.h6-font {
+    font-size: 12px;
 }
